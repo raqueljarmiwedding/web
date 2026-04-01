@@ -1,0 +1,20 @@
+{
+  "name": "bodaweb",
+  "version": "1.0.0",
+  "description": "Página web elegante para compartir los detalles de tu boda",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "build": "echo 'No build process needed for static site'"
+  },
+  "keywords": [
+    "boda",
+    "wedding",
+    "web",
+    "invitaciones",
+    "RSVP"
+  ],
+  "author": "Tu Nombre",
+  "license": "MIT",
+  "devDependencies": {}
+}

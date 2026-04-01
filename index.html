@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Boda</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Página de Login -->
+    <div id="loginPage" class="login-page">
+        <div class="login-container">
+            <h1>This is just the beginning...</h1>
+            <p class="login-subtitle">Raquel & Jarmi</p>
+            <p class="login-date">12 de septiembre de 2026</p>
+            
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" name="password" placeholder="Ingresa la contraseña para continuar..." required>
+                </div>
+                <button type="submit" class="btn btn-primary">Acceder</button>
+                <p id="loginError" class="login-error" style="display: none;">Contraseña incorrecta</p>
+            </form>
+
+            <div class="login-photo">
+                <img src="/pics/raquelyjarmi.png" alt="Raquel y Jarmi" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenido Principal (oculto hasta login) -->
+    <div id="mainContent" class="main-content" style="display: none;">
+    <!-- Galería de Imágenes Fullscreen -->
+    <div class="image-gallery">
+        <!-- Pantalla 1: Inicio -->
+        <section class="image-slide">
+            <img src="pics/screen1.png" alt="Inicio" class="slide-image">
+        </section>
+
+        <!-- Pantalla 2: Nuestra Historia -->
+        <section class="image-slide">
+            <img src="pics/screen3.png" alt="Nuestra Historia" class="slide-image">
+        </section>
+
+        <!-- Pantalla 3: Itinerario -->
+        <section class="image-slide">
+            <img src="pics/screen4.png" alt="Itinerario" class="slide-image">
+        </section>
+
+        <!-- Pantalla 4: Detalles -->
+        <section class="image-slide">
+            <img src="pics/screen2.png" alt="Detalles" class="slide-image">
+        </section>
+
+    </div>
+
+    <!-- Sección RSVP Independiente -->
+    <section class="rsvp-section">
+        <div class="rsvp-overlay">
+            <form class="rsvp-form" id="rsvpForm">
+                    <h2>Confirma tu Asistencia</h2>
+
+                    <div class="form-group">
+                        <label for="nombres">Nombres de los asistentes:</label>
+                        <textarea id="nombres" name="nombres" rows="4" placeholder="Escribe los nombres de quién asistirá (un nombre por línea)..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="asistencia">¿Asistirás a la boda?</label>
+                        <select id="asistencia" name="asistencia" required onchange="toggleAsistentesCampos()">
+                            <option value="">Selecciona una opción</option>
+                            <option value="Sí, confirmo mi asistencia">Sí, confirmo mi asistencia</option>
+                            <option value="No podré asistir">No podré asistir</option>
+                        </select>
+                    </div>
+
+                    <div id="asistentesSection" style="display: none;">
+
+                        <div class="form-group">
+                            <label for="alergias">Alergias o restricciones alimentarias:</label>
+                            <textarea id="alergias" name="alergias" rows="3" placeholder="Cuéntanos sobre alergias, restricciones dietéticas u otras preferencias..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bus">¿Necesitas transporte en bus desde Logroño?</label>
+                            <select id="bus" name="bus">
+                                <option value="">Selecciona una opción</option>
+                                <option value="Sí, necesito bus">Sí, necesito bus</option>
+                                <option value="No, tengo transporte propio">No, tengo transporte propio</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cancion">Canción que te gustaría escuchar:</label>
+                            <textarea id="cancion" name="cancion" rows="2" placeholder="Nombre de la canción y artista (ej: Maletero Tuboescape - Kiko Rivera)..."></textarea>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Enviar Confirmación</button>
+                </form>
+                <div id="successMessage" class="success-message" style="display: none;">
+                    ✅ ¡Gracias por tu confirmación!
+                </div>
+            </div>
+        </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Nuestra Boda. Creado con ❤️</p>
+        </div>
+    </footer>
+    </div>
+
+    <!-- Formulario oculto para Google Forms -->
+    <form id="hiddenGoogleForm" action="https://docs.google.com/forms/d/e/1FAIpQLScoOEXsAhMu_zmmbBm-fc_lzsRYDrcNnFZgBwoxPJO7Q66d3g/formResponse" method="POST" style="display: none;">
+        <input type="hidden" name="entry.1291076552" id="hiddenAsistencia">
+        <input type="hidden" name="entry.2086544460" id="hiddenNombres">
+        <input type="hidden" name="entry.203052907" id="hiddenAlergias">
+        <input type="hidden" name="entry.1751349236" id="hiddenBus">
+        <input type="hidden" name="entry.1983345768" id="hiddenCancion">
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
