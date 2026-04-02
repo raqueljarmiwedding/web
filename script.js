@@ -71,7 +71,6 @@ const FORM_FIELDS = {
     nombres: '2086544460',
     alergias: '203052907',
     bus: '1751349236',
-    cancion: '1983345768',
 };
 
 // ===== FUNCIONALIDAD ORIGINAL =====
@@ -98,10 +97,9 @@ document.getElementById('rsvpForm').addEventListener('submit', function(e) {
     const nombres = document.getElementById('nombres').value || '';
     const alergias = document.getElementById('alergias').value || '';
     const bus = document.getElementById('bus').value || '';
-    const cancion = document.getElementById('cancion').value || '';
     
     console.log('📊 Datos recopilados del formulario:');
-    console.log({asistencia, nombres, alergias, bus, cancion});
+    console.log({asistencia, nombres, alergias, bus});
     
     // Crear objeto con los datos
     const confirmacion = {
@@ -109,7 +107,6 @@ document.getElementById('rsvpForm').addEventListener('submit', function(e) {
         nombres,
         alergias,
         bus,
-        cancion,
         fecha: new Date().toLocaleString('es-ES')
     };
     
@@ -161,9 +158,6 @@ function enviarAGoogleForms(datos) {
     
     document.getElementById('hiddenBus').value = datos.bus;
     console.log(`  ✓ bus: "${datos.bus}"`);
-    
-    document.getElementById('hiddenCancion').value = datos.cancion;
-    console.log(`  ✓ cancion: "${datos.cancion}"`);
     
     // Log de envío
     console.log('🔗 URL de destino:', 'https://docs.google.com/forms/d/e/' + GOOGLE_FORM_ID + '/formResponse');
