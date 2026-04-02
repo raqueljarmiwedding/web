@@ -299,6 +299,7 @@ body {
     border-radius: 25px; /* cambia de 5px a 25px */
     padding: 12px 30px;
     transition: all 0.3s ease;
+    letter-spacing: 3px;
 }
 
 .location-place {
@@ -813,6 +814,64 @@ body {
     color: #6C0B25;
 }
 
+/* Spotify */
+.spotify-wrapper {
+    width: 100%;
+    background-color: #6C0B25;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 24px 2px;
+    gap: 20px;
+}
+
+.spotify-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    letter-spacing: 1px;
+    line-height: 1.8;
+    color: #F0EEE9;
+    text-align: center;
+    max-width: 500px;
+    margin: 0;
+}
+.spotify-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.spotify-link:hover {
+    transform: translateY(-3px);
+    opacity: 0.85;
+}
+
+.spotify-icon {
+    width: 80px;
+    height: 80px;
+}
+
+.spotify-cta {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: #6C0B25;
+    border: 1.5px solid #6C0B25;
+    border-radius: 25px;
+    padding: 10px 24px;
+    transition: all 0.3s ease;
+}
+
+.spotify-link:hover .spotify-cta {
+    background-color: #6C0B25;
+    color: #F0EEE9;
+}
+
 /* Formulario RSVP */
 .rsvp-form {
     max-width: 600px;
@@ -848,7 +907,7 @@ body {
     width: 100%;
     padding: 10px;
     border: 1px solid var(--border-color);
-    border-radius: 5px;
+    border-radius: 35px;
     font-size: 15px;        /* cambia de 14px a 15px */
     font-family: 'Montserrat', sans-serif;  /* explícita en lugar de inherit */
     color: var(--text-color);  /* añade esta línea */
