@@ -71,6 +71,10 @@ body {
     max-width: 500px;
     width: 100%;
     margin: 0 20px 1px;
+
+    /* Añade estas dos líneas */
+    position: relative;
+    z-index: 10;
 }
 
 .login-container h1 {
