@@ -93,11 +93,91 @@
             <img src="pics/screen4.png" alt="Alojamientos font" class="slide-image">
         </section>
 
+        <!-- Alojamientos -->
+        <div class="hotels-wrapper">
+
+            <div class="hotel-card">
+                <p class="hotel-name">HOTEL MURRIETA</p>
+                <img src="pics/murrieta.png" alt="Hotel Murrieta" class="hotel-img">
+                <div class="hotel-btn-wrapper">
+                    <a href="https://maps.app.goo.gl/YRjoMiKojek3cFQJ6" target="_blank" class="btn-location-faq">¿Cómo llegar?</a>
+                </div>
+            </div>
+
+            <div class="hotel-card">
+                <p class="hotel-name">MARQUÉS DE VALLEJO</p>
+                <img src="pics/vallejo.png" alt="Marqués de Vallejo" class="hotel-img">
+                <div class="hotel-btn-wrapper">
+                    <a href="https://maps.app.goo.gl/aF4hzaJTbTDpWh5T8" target="_blank" class="btn-location-faq">¿Cómo llegar?</a>
+                </div>
+            </div>
+
+            <div class="hotel-card">
+                <p class="hotel-name">HOTEL PORTALES</p>
+                <img src="pics/portales.png" alt="Hotel Portales" class="hotel-img">
+                <div class="hotel-btn-wrapper">
+                    <a href="https://maps.app.goo.gl/iucuQCSG6MPKP67P6" target="_blank" class="btn-location-faq">¿Cómo llegar?</a>
+                </div>
+            </div>
+
+            <div class="hotel-card">
+                <p class="hotel-name">HOTEL AUREA</p>
+                <img src="pics/aurea.png" alt="Hotel Aurea" class="hotel-img">
+                <div class="hotel-btn-wrapper">
+                    <a href="https://maps.app.goo.gl/PLe1MFNECYHQg24y7" target="_blank" class="btn-location-faq">¿Cómo llegar?</a>
+                </div>
+            </div>
+
+        </div>
+
         <!-- Pantalla 5: Preguntas frecuentes -->
         <section class="image-slide">
             <img src="pics/screen5.png" alt="Detalles" class="slide-image">
         </section>
 
+        <!-- Preguntas Frecuentes Colapsables -->
+        <div class="faq-wrapper">
+
+            <div class="faq-item">
+                <button class="faq-trigger" onclick="toggleFaq(this)">
+                    <span>DRESSCODE</span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M2 5l6 6 6-6" stroke="#75763E" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-content">
+                    <p>No hay dresscode, podéis venir como queráis. Solo tened en cuenta que es al aire libre y hay suelo empedrado y jardín.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-trigger" onclick="toggleFaq(this)">
+                    <span>¿HAY SITIO PARA APARCAR?</span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M2 5l6 6 6-6" stroke="#75763E" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-content">
+                    <p>Sí. No hay mucho, pero creemos que con los que somos habrá suficiente.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-trigger" onclick="toggleFaq(this)">
+                    <span>¿HABRÁ TRANSPORTE PARA LA BODA?</span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M2 5l6 6 6-6" stroke="#75763E" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-content">
+                    <p>¡Sí! Si necesitáis el servicio de autobús indicadlo en el formulario. El autobús saldrá desde la fuente de Murrieta a las 13:00.</p>
+                    <div class="faq-location-btn-wrapper">
+                        <a href="https://maps.app.goo.gl/q5QnQV9Nh9X4PXYX8" target="_blank" class="btn-location-faq">¿Cómo llegar?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <!-- Pantalla 6: Música y fotos -->
         <section class="image-slide">
             <img src="pics/screen6_1.png" alt="Detalles" class="slide-image">
@@ -106,6 +186,11 @@
         <section class="image-slide">
             <img src="pics/screen6_2.png" alt="Detalles" class="slide-image">
         </section>
+
+        <div class="upload-wrapper">
+            <p class="upload-text">Aquí podrás subir las fotos y vídeos que captures durante el día. Momentos divertidos o emocionantes, ¡todo será bienvenido!</p>
+            <a href="https://drive.google.com/drive/folders/1_nqyBi4NacEhJj0NxG5-FyNd_6sCm9qi?usp=drive_link" target="_blank" class="btn-upload">SUBIR FOTOS</a>
+        </div>
 
         <!-- Pantalla 7: Cierre y cuenta -->
         <section class="image-slide">

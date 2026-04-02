@@ -185,6 +185,22 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// ===== FAQ COLAPSABLE =====
+function toggleFaq(trigger) {
+    const content = trigger.nextElementSibling;
+    const isOpen = trigger.classList.contains('open');
+
+    document.querySelectorAll('.faq-trigger').forEach(t => {
+        t.classList.remove('open');
+        t.nextElementSibling.classList.remove('open');
+    });
+
+    if (!isOpen) {
+        trigger.classList.add('open');
+        content.classList.add('open');
+    }
+}
+
 // Agregar efectos de carga
 window.addEventListener('load', function() {
     console.log('🎉 Bienvenido a nuestra página de boda');

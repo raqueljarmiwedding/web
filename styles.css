@@ -20,7 +20,7 @@ html {
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: var(--text-color);
     line-height: 1.6;
     background-color: #fff;
@@ -314,6 +314,99 @@ body {
     color: #75763E;
 }
 
+/*FAQs*/
+.faq-wrapper {
+    width: 100%;
+    background-color: #F0EEE9;
+    padding: 60px 30px;
+    ;
+}
+
+.faq-item {
+    border-top: 1px solid rgba(117, 118, 62, 0.2);
+}
+
+.faq-item:last-child {
+    border-bottom: 1px solid rgba(117, 118, 62, 0.2);
+}
+
+.faq-trigger {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: #75763E;
+    text-align: left;
+}
+
+.faq-trigger svg {
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.faq-trigger.open svg {
+    transform: rotate(180deg);
+}
+
+.faq-content {
+    display: none;
+    padding: 0 24px 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    letter-spacing: 1px;
+    line-height: 1.8;
+    color: #75763E;
+}
+
+.faq-content.open {
+    display: block;
+}
+
+.faq-location-btn-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.btn-location-faq {
+    color: #75763E;
+    background-color: transparent;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-decoration: none;
+    border: 1.5px solid #75763E;
+    border-radius: 25px;
+    padding: 10px 24px;
+    transition: all 0.3s ease;
+}
+
+.btn-location-faq:hover {
+    background-color: #75763E;
+    color: #F0EEE9;
+}
+
+.faq-location-place {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #75763E;
+    margin: 0;
+}
+
 /* Sección RSVP Independiente */
 .rsvp-section {
     width: 100%;
@@ -349,7 +442,7 @@ body {
     top: 50%;
     transform: translateY(-50%);
     font-size: 15px;            /* ya lo tienes, déjalo */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  /* añade esta línea */
+    font-family: 'Montserrat', sans-serif;  /* añade esta línea */
     color: #888;
     pointer-events: none;
     transition: all 0.15s ease;
@@ -419,6 +512,7 @@ body {
 .btn-primary {
     background-color: #A8A87A;
     color: white;
+    border-radius: 25px;
 }
 
 .btn-primary:hover {
@@ -432,6 +526,7 @@ body {
     color: #6C0B25;
     display: block;
     margin: 30px auto 0; /* Centrado horizontal y margen superior */
+    border-radius: 25px;
 }
 
 .btn-rsvp:hover {
@@ -630,6 +725,94 @@ body {
     font-size: 16px;
 }
 
+/* Hoteles */
+.hotels-wrapper {
+    width: 100%;
+    background-color: #75763E;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 24px;
+    gap: 24px;
+}
+
+.hotel-card {
+    width: 100%;
+    max-width: 500px;
+    background-color: #F0EEE9;
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px;
+    gap: 16px;
+}
+
+.hotel-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: #75763E;
+    margin: 0;
+    text-align: center;
+}
+
+.hotel-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 0px;
+}
+
+.hotel-btn-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+/* Botón subir fotos */
+.upload-wrapper {
+    width: 100%;
+    background-color: #6C0B25;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 24px;
+    gap: 24px;
+}
+
+.upload-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    letter-spacing: 1px;
+    line-height: 1.8;
+    color: #F0EEE9;
+    text-align: center;
+    max-width: 500px;
+    margin: 0;
+}
+
+.btn-upload {
+    color: #F0EEE9;
+    background-color: #6C0B25;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-decoration: none;
+    border: 1.5px solid #F0EEE9;
+    border-radius: 25px;
+    padding: 12px 30px;
+    transition: all 0.3s ease;
+}
+
+.btn-upload:hover {
+    background-color: #F0EEE9;
+    color: #6C0B25;
+}
+
 /* Formulario RSVP */
 .rsvp-form {
     max-width: 600px;
@@ -667,14 +850,14 @@ body {
     border: 1px solid var(--border-color);
     border-radius: 5px;
     font-size: 15px;        /* cambia de 14px a 15px */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  /* explícita en lugar de inherit */
+    font-family: 'Montserrat', sans-serif;  /* explícita en lugar de inherit */
     color: var(--text-color);  /* añade esta línea */
 }
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
     font-size: 15px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: #888;
 }
 
@@ -716,7 +899,7 @@ body {
 
 /* Footer */
 .footer {
-    background-color: #A8A87A;
+    background-color: #75763E;
     color: white;
     text-align: center;
     padding: 10px 10px;    /* Padding mínimo */
