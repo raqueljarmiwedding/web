@@ -1,6 +1,29 @@
 // ===== SISTEMA DE LOGIN =====
 const CONTRASEÑA_CORRECTA = 'boda2026'; // Cambiar esta contraseña según necesites
 
+// Contador boda
+const weddingDate = new Date('2026-09-12T12:00:00');
+
+function updateCountdown() {
+    const now = new Date();
+    const diff = weddingDate - now;
+    if (diff <= 0) {
+        document.getElementById('cdTotal').innerHTML = '¡Hoy es el gran día! 🥂';
+        return;
+    }
+    const days = Math.floor(diff / 86400000);
+    const hours = Math.floor((diff % 86400000) / 3600000);
+    const minutes = Math.floor((diff % 3600000) / 60000);
+    const seconds = Math.floor((diff % 60000) / 1000);
+
+    document.getElementById('cdDays').textContent = String(days).padStart(2, '0');
+    document.getElementById('cdHours').textContent = String(hours).padStart(2, '0');
+    document.getElementById('cdMinutes').textContent = String(minutes).padStart(2, '0');
+    document.getElementById('cdSeconds').textContent = String(seconds).padStart(2, '0');
+    document.getElementById('cdTotal').innerHTML =
+        `Faltan <span>${days}</span> días para el momento más bonito`;
+}
+
 // Verificar si el usuario ya ha ingresado la contraseña
 window.addEventListener('load', function() {
     const accesoOtorgado = sessionStorage.getItem('accesoOtorgado');
@@ -32,6 +55,9 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
 function mostrarContenidoPrincipal() {
     document.getElementById('loginPage').style.display = 'none';
     document.getElementById('mainContent').style.display = 'block';
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
 }
 
 // ===== CONFIGURACIÓN DE GOOGLE FORMS =====

@@ -160,13 +160,101 @@ body {
     height: auto;
     object-fit: contain;
     object-position: center;
+    display: block; /* Elimina espacios residuales debajo de las imágenes */
 }
+
+/*Countdown */
+.countdown-section {
+    text-align: center;
+    padding: clamp(40px, 8vw, 80px) clamp(20px, 5vw, 40px);
+    background: #75763E;
+}
+.countdown-eyebrow {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    font-size: clamp(8px, 1.5vw, 10px);
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #F0EEE9;
+    margin-bottom: 12px;
+}
+.countdown-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(24px, 6vw, 42px);
+    color: #F0EEE9;
+    margin: 0 0 8px;
+}
+.countdown-date {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    font-size: clamp(9px, 1.8vw, 11px);
+    letter-spacing: 4px;
+    color: #F0EEE9;
+    margin-bottom: 40px;
+}
+.countdown-divider {
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #F0EEE9, transparent);
+    margin: 0 auto 40px;
+}
+.units-grid {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0;
+}
+.unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 clamp(8px, 4vw, 28px);
+    position: relative;
+}
+.unit:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 8px;
+    height: 40px;
+    width: 1px;
+    background: linear-gradient(180deg, transparent, #F0EEE9, transparent);
+}
+.unit-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(32px, 10vw, 64px);
+    color: #F0EEE9;
+    line-height: 1;
+    min-width: clamp(40px, 10vw, 80px);
+    text-align: center;
+}
+.unit-label {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    font-size: clamp(7px, 1.5vw, 9px);
+    letter-spacing: clamp(1px, 0.5vw, 3px);
+    text-transform: uppercase;
+    color: #F0EEE9;
+    margin-top: 8px;
+}
+.countdown-total {
+    margin-top: clamp(24px, 5vw, 40px);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(13px, 2.5vw, 16px);
+    color: #F0EEE9;
+    padding: 0 10px;
+}
+.countdown-total span { color: #F0EEE9; }
 
 /* Sección RSVP Independiente */
 .rsvp-section {
     width: 100%;
-    background: linear-gradient(to bottom, rgba(240, 239, 235, 0.95) 0%, rgba(240, 239, 235, 0.98) 100%);
-    padding: 20px 20px;
+    background: #6C0B25;
+    padding: 1px 1px;
     min-height: auto;
     display: flex;
     align-items: center;
@@ -177,6 +265,41 @@ body {
     width: 100%;
     display: flex;
     justify-content: center;
+}
+
+.select-wrapper { position: relative; }
+.select-wrapper select {
+  width: 100%;
+  padding: 22px 40px 6px 12px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  appearance: none;
+  cursor: pointer;
+}
+.floating-label {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 15px;
+  color: #888;
+  pointer-events: none;
+  transition: all 0.15s ease;
+}
+.select-wrapper select:focus ~ .floating-label,
+.select-wrapper select.has-value ~ .floating-label {
+  top: 8px;
+  transform: none;
+  font-size: 11px;
+  color: #aaa;
+}
+.arrow {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
 }
 
 /* Hero Section */
@@ -236,6 +359,19 @@ body {
     background-color: #9A9A6F;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(168, 168, 122, 0.3);
+}
+
+.btn-rsvp {
+    background-color: #F0EEE9;
+    color: #6C0B25;
+    display: block;
+    margin: 30px auto 0; /* Centrado horizontal y margen superior */
+}
+
+.btn-rsvp:hover {
+    background-color: #e5e2d9; /* Un tono ligeramente más oscuro para el hover */
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Sección de Foto Principal */
@@ -431,15 +567,15 @@ body {
 /* Formulario RSVP */
 .rsvp-form {
     max-width: 600px;
-    margin: 40px auto;
-    background-color: white;
-    padding: 40px;
+    margin: 0 auto;    /* Eliminamos el margen de 40px vertical */
+    background-color: transparent;
+    padding: 10px 40px; /* Reducimos el padding vertical de 40px a 10px */
     border-radius: 10px;
-    box-shadow: 0 5px 30px rgba(62, 62, 62, 0.2);
+    box-shadow: none;
 }
 
 .rsvp-form h2 {
-    color: #A8A87A;
+    color: white;
     margin-bottom: 30px;
     text-align: center;
     font-size: 28px;
@@ -453,7 +589,7 @@ body {
     display: block;
     margin-bottom: 8px;
     font-weight: 600;
-    color: #A8A87A;
+    color: white;
 }
 
 .form-group input,
@@ -508,7 +644,13 @@ body {
     background-color: #A8A87A;
     color: white;
     text-align: center;
-    padding: 30px 20px;
+    padding: 10px 10px;    /* Padding mínimo */
+}
+
+.footer p {
+    margin: 0;         /* Eliminamos margen del texto que pueda empujar el fondo */
+    font-size: 16px;   /* Texto más pequeño ayuda a reducir la altura total */
+    line-height: 2;  /* Controlamos la altura de la línea de texto */
 }
 
 /* Animaciones */

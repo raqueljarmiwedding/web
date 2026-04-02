@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nuestra Boda</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300;1,400&family=Montserrat:wght@200;300&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Página de Login -->
@@ -27,7 +28,7 @@
             </form>
 
             <div class="login-photo">
-                <img src="pics/raquelyjarmi.png" alt="Raquel y Jarmi" />
+                <img src="pics/login.png" alt="Raquel y Jarmi" />
             </div>
         </div>
     </div>
@@ -41,66 +42,125 @@
             <img src="pics/screen1.png" alt="Inicio" class="slide-image">
         </section>
 
-        <!-- Pantalla 2: Nuestra Historia -->
-        <section class="image-slide">
-            <img src="pics/screen3.png" alt="Nuestra Historia" class="slide-image">
+        <!-- Pantalla 2: Contador de días + ubicción -->
+        <section class="countdown-section">
+            <h2 class="countdown-title">La cuenta atrás</h2>
+            <p class="countdown-date">12 · IX · 2026</p>
+            <div class="countdown-divider"></div>
+            <div class="units-grid">
+                <div class="unit">
+                    <div class="unit-number" id="cdDays">--</div>
+                    <div class="unit-label">Días</div>
+                </div>
+                <div class="unit">
+                    <div class="unit-number" id="cdHours">--</div>
+                    <div class="unit-label">Horas</div>
+                </div>
+                <div class="unit">
+                    <div class="unit-number" id="cdMinutes">--</div>
+                    <div class="unit-label">Minutos</div>
+                </div>
+                <div class="unit">
+                    <div class="unit-number" id="cdSeconds">--</div>
+                    <div class="unit-label">Segundos</div>
+                </div>
+            </div>
+            <p class="countdown-total" id="cdTotal"></p>
         </section>
 
-        <!-- Pantalla 3: Itinerario -->
         <section class="image-slide">
-            <img src="pics/screen4.png" alt="Itinerario" class="slide-image">
+            <img src="pics/screen2_1.png" alt="Contino" class="slide-image">
         </section>
 
-        <!-- Pantalla 4: Detalles -->
         <section class="image-slide">
-            <img src="pics/screen2.png" alt="Detalles" class="slide-image">
+            <img src="pics/screen2_2.png" alt="Contino font" class="slide-image">
+        </section>
+
+        <!-- Pantalla 3: Timeline -->
+        <section class="image-slide">
+            <img src="pics/screen3.png" alt="Timeline" class="slide-image">
+        </section>
+
+        <!-- Pantalla 4: Dónde alojarse -->
+        <section class="image-slide">
+            <img src="pics/screen4.png" alt="Alojamientos font" class="slide-image">
+        </section>
+
+        <!-- Pantalla 5: Preguntas frecuentes -->
+        <section class="image-slide">
+            <img src="pics/screen5.png" alt="Detalles" class="slide-image">
+        </section>
+
+        <!-- Pantalla 6: Música y fotos -->
+        <section class="image-slide">
+            <img src="pics/screen6_1.png" alt="Detalles" class="slide-image">
+        </section>
+
+        <section class="image-slide">
+            <img src="pics/screen6_2.png" alt="Detalles" class="slide-image">
+        </section>
+
+        <!-- Pantalla 7: Cierre y cuenta -->
+        <section class="image-slide">
+            <img src="pics/screen7.png" alt="Detalles" class="slide-image">
         </section>
 
     </div>
 
     <!-- Sección RSVP Independiente -->
+    
+    <!-- Pre formulario: Titulo -->
+    <section class="image-slide">
+        <img src="pics/screen8_1.png" alt="Titulo formulario" class="slide-image">
+    </section>
+    
     <section class="rsvp-section">
         <div class="rsvp-overlay">
             <form class="rsvp-form" id="rsvpForm">
-                    <h2>Confirma tu Asistencia</h2>
 
                     <div class="form-group">
-                        <label for="nombres">Nombres de los asistentes:</label>
-                        <textarea id="nombres" name="nombres" rows="4" placeholder="Escribe los nombres de quién asistirá (un nombre por línea)..."></textarea>
+                        <textarea id="nombres" name="nombres" rows="1" placeholder="Nombres de los asistentes"></textarea>
                     </div>
                     
                     <div class="form-group">
-                        <label for="asistencia">¿Asistirás a la boda?</label>
-                        <select id="asistencia" name="asistencia" required onchange="toggleAsistentesCampos()">
-                            <option value="">Selecciona una opción</option>
+                        <div class="select-wrapper">
+                            <select id="asistencia" name="asistencia" required
+                            onchange="this.classList.add('has-value'); toggleAsistentesCampos()">
+                            <option value="" disabled selected hidden></option>
                             <option value="Sí, confirmo mi asistencia">Sí, confirmo mi asistencia</option>
                             <option value="No podré asistir">No podré asistir</option>
-                        </select>
-                    </div>
+                            </select>
+                            <span class="floating-label">¿Asistirás a la boda?</span>
+                            <svg class="arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                            <path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        </div>
 
                     <div id="asistentesSection" style="display: none;">
 
                         <div class="form-group">
-                            <label for="alergias">Alergias o restricciones alimentarias:</label>
-                            <textarea id="alergias" name="alergias" rows="3" placeholder="Cuéntanos sobre alergias, restricciones dietéticas u otras preferencias..."></textarea>
+                            <textarea id="alergias" name="alergias" rows="1" placeholder="¿Tienes alguna intolerancia?"></textarea>
                         </div>
 
                         <div class="form-group">
-                            <label for="bus">¿Necesitas transporte en bus desde Logroño?</label>
-                            <select id="bus" name="bus">
-                                <option value="">Selecciona una opción</option>
+                            <div class="select-wrapper">
+                                <select id="bus" name="bus"
+                                onchange="this.classList.add('has-value')">
+                                <option value="" disabled selected hidden></option>
                                 <option value="Sí, necesito bus">Sí, necesito bus</option>
                                 <option value="No, tengo transporte propio">No, tengo transporte propio</option>
-                            </select>
-                        </div>
+                                </select>
+                                <span class="floating-label">¿Necesitas servicio de autobús?</span>
+                                <svg class="arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                                <path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            </div>
 
-                        <div class="form-group">
-                            <label for="cancion">Canción que te gustaría escuchar:</label>
-                            <textarea id="cancion" name="cancion" rows="2" placeholder="Nombre de la canción y artista (ej: Maletero Tuboescape - Kiko Rivera)..."></textarea>
-                        </div>
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Enviar Confirmación</button>
+                    <button type="submit" class="btn btn-rsvp">Enviar Confirmación</button>
                 </form>
                 <div id="successMessage" class="success-message" style="display: none;">
                     ✅ ¡Gracias por tu confirmación!
@@ -108,10 +168,15 @@
             </div>
         </section>
 
+        <!-- Post formulario: Paloma -->
+        <section class="image-slide">
+            <img src="pics/screen8_2.png" alt="Paloma" class="slide-image">
+        </section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 Nuestra Boda. Creado con ❤️</p>
+            <p>&copy;Creado por Raquel y Jarmi con ❤️</p>
         </div>
     </footer>
     </div>
@@ -122,7 +187,6 @@
         <input type="hidden" name="entry.2086544460" id="hiddenNombres">
         <input type="hidden" name="entry.203052907" id="hiddenAlergias">
         <input type="hidden" name="entry.1751349236" id="hiddenBus">
-        <input type="hidden" name="entry.1983345768" id="hiddenCancion">
     </form>
 
     <script src="script.js"></script>
