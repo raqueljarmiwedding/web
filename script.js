@@ -1,6 +1,13 @@
 // ===== SISTEMA DE LOGIN =====
-const CONTRASEÑA_CORRECTA = 'boda2026'; // Cambiar esta contraseña según necesites
+const HASH_CORRECTO = '3747fff9cc06c56d6c35c0cc95e6d5d37c52e22a198b47527614d8ea82f15390';
 
+// Función para convertir la contraseña ingresada en un Hash SHA-256
+async function generarHash(texto) {
+    const msgUint8 = new TextEncoder().encode(texto);                           // Codificar texto
+    const hashBuffer = await crypto.subtle.digest('SHA-256', msgUint8);         // Generar hash
+    const hashArray = Array.from(new Uint8Array(hashBuffer));                   // Convertir a array de bytes
+    return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');        // Convertir a hexadecimal
+}
 // Contador boda
 const weddingDate = new Date('2026-09-12T12:00:00');
 
@@ -33,19 +40,21 @@ window.addEventListener('load', function() {
 });
 
 // Manejar el envío del formulario de login
-document.getElementById('loginForm').addEventListener('submit', function(e) {
+document.getElementById('loginForm').addEventListener('submit', async function(e) {
     e.preventDefault();
     
     const passwordInput = document.getElementById('password').value;
     const loginError = document.getElementById('loginError');
     
-    if (passwordInput === CONTRASEÑA_CORRECTA) {
-        // Guardar que el usuario ha accedido correctamente
+    // Generamos el hash de lo que el invitado escribió
+    const hashInput = await generarHash(passwordInput);
+    
+    // Comparamos los hashes, no las palabras
+    if (hashInput === HASH_CORRECTO) {
         sessionStorage.setItem('accesoOtorgado', 'true');
         loginError.style.display = 'none';
         mostrarContenidoPrincipal();
     } else {
-        // Mostrar error
         loginError.style.display = 'block';
         document.getElementById('password').value = '';
         document.getElementById('password').focus();
